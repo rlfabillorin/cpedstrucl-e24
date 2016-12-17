@@ -29,6 +29,18 @@ public:
         delete n;
         return ret;
     }
+    
+    void display(){
+    	Node *temp;
+    	temp=head;
+    	while(head!=0){
+    		Node *n=head;
+    		Node *x=temp;
+    		int ret = n->x;
+    		head=head->next;
+    		cout<<ret;
+		}
+	}
 
 private:
     Node *head; 
@@ -39,10 +51,11 @@ void menu()
 	cout<<"1. Insert into linked list"<<endl;
 	cout<<"2. Pop"<<endl;
 	cout<<"3. Exit"<<endl;
+	cout<<"4. Display"<<endl;
 }
 
 int main() {
-    LinkedList *list=new LinkedList;
+    LinkedList list;
     int val, choice;
     	while(1){
     		system("cls");
@@ -53,17 +66,23 @@ int main() {
     		case 1:{
     			cout<<"Insert: ";
     			cin>>val;
-    			list->addValue(val);
+    			list.addValue(val);
 				break;
 			}
+			
 			case 2:{
-				list->popValue();
-				cout<<list->popValue();
+				cout<<list.popValue();
 				break;
 			}
+			
 			case 3:
 				exit(1);
 				default: break;
+
+			case 4:{
+				list.display();
+				break;
+			}
 		}
 		getch();
 	}
