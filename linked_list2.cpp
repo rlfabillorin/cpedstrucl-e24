@@ -28,17 +28,18 @@ public:
         head = head->next;
         delete n;
         return ret;
+        
     }
     
     void display(){
     	Node *temp;
     	temp=head;
-    	while(head!=0){
+    	while(head!=NULL){
     		Node *n=head;
     		Node *x=temp;
     		int ret = n->x;
     		head=head->next;
-    		cout<<ret;
+    		cout<<ret<<" ";
 		}
 	}
 
