@@ -32,14 +32,10 @@ public:
     }
     
     void display(){
-    	Node *temp;
-    	temp=head;
-    	while(head!=NULL){
-    		Node *n=head;
-    		Node *x=temp;
-    		int ret = n->x;
-    		head=head->next;
-    		cout<<ret<<" ";
+		Node *n=head;
+		while(n!=NULL){
+			cout<<n->x<<" ";
+			n=n->next;
 		}
 	}
 
